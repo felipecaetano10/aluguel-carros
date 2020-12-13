@@ -18,7 +18,8 @@ export class CarRegistrationPage implements OnInit {
     private carService: CarService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-    ) { 
+    ) {
+       
     this.car = new Car();
 
     const codigo = parseInt(this.activatedRoute.snapshot.paramMap.get('codigo'));

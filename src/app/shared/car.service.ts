@@ -69,9 +69,7 @@ export class CarService {
     } else {
       this.car[indice] = {...car};
     }
-    
-    console.log(this.car);
-  }
+}
 
   public getCar(codigo: number) {
     return this.car.find(c => c.codigo === codigo);

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Aluguel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Nome Locatário</ion-label>
+    <ion-input [(ngModel)]="rent.nomeLoc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CNH Locatário</ion-label>
+    <ion-input [(ngModel)]="rent.CNHLoc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Endereço Locatário</ion-label>
+    <ion-input [(ngModel)]="rent.enderecoLoc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cidade Locatário</ion-label>
+    <ion-input [(ngModel)]="rent.cidadeLoc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CEP Locatário</ion-label>
+    <ion-input [(ngModel)]="rent.cepLoc"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado Locatário</ion-label>
+    <ion-select [(ngModel)]="rent.estadoLoc" multiple="false" placeholder="Selecione o estado">
+      <ion-select-option *ngFor="let estado of estados" [value]="estado.value">{{estado.description}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Carro</ion-label>
+    <ion-select [(ngModel)]="rent.carro" multiple="false" placeholder="Selecione o carro">
+      <ion-select-option *ngFor="let car of carros" [value]="car">{{car.modelo}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Início do aluguel</ion-label>
+    <ion-datetime [(ngModel)]="rent.dataInicio" displayFormat="DD/MM/YYYY" cancelText="Cancelar" doneText="Selecionar"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fim do aluguel</ion-label>
+    <ion-datetime [(ngModel)]="rent.dataFim" displayFormat="DD/MM/YYYY" cancelText="Cancelar" doneText="Selecionar"></ion-datetime>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="register()">
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/rent-list']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

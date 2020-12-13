@@ -36,16 +36,13 @@ export class CarListPage implements OnInit, ViewWillEnter {
 
   edit(car: Car){
     this.router.navigate(['/car-registration',car.codigo]);
+    this.list();
   }
 
   remove(car: Car){
     console.log('remove' + car.modelo);
     this.carService.remove(car);
     this.list();
-  }
-
-  details(car: Car){
-    console.log('details' + car.modelo);
   }
 
 }

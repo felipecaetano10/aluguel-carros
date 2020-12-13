@@ -36,7 +36,7 @@ export class CarRegistrationPage implements OnInit {
     this.car.diaria = parseFloat(this.car.diaria.toString());
     this.car.tipo = CarType[this.car.tipo];
     this.carService.register(this.car);
-    this.router.navigate(['/car-list'])
+    this.router.navigate(['/home/car-list'])
   }
 
 }

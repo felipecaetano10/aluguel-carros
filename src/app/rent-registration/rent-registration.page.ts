@@ -52,6 +52,6 @@ export class RentRegistrationPage implements OnInit {
   register(){    
     this.rent.codigo = Math.floor(Math.random() * 99999999);
     this.rentService.register(this.rent);
-    this.router.navigate(['/rent-list'])
+    this.router.navigate(['/home/rent-list'])
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ViewWillEnter } from '@ionic/angular';
+import { ModalController, ViewWillEnter } from '@ionic/angular';
+import { RentModalPage } from '../rent-modal/rent-modal.page';
 import { Rent } from '../shared/rent';
 import { RentService } from '../shared/rent.service';
 
@@ -14,7 +15,7 @@ export class RentListPage implements OnInit, ViewWillEnter {
 
   rentList: Rent[];
 
-  constructor(private rentService: RentService, private router: Router) { }
+  constructor(private rentService: RentService, private router: Router, private modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,12 @@ export class RentListPage implements OnInit, ViewWillEnter {
   remove(rent: Rent){
     this.rentService.remove(rent);
     this.list();
+  }
+
+  OpenModal(rent: Rent) {
+    this.modalController.create({component:RentModalPage, cssClass: 'my-custom-modal-css',componentProps:{rent: rent}}).then((modalElement)=>{
+      modalElement.present();
+    })
   }
 
   edit(rent: Rent){

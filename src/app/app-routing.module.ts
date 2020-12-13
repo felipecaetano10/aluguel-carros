@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'rent-registration/:codigo',
     loadChildren: () => import('./rent-registration/rent-registration.module').then( m => m.RentRegistrationPageModule)
   },
+  {
+    path: 'rent-modal',
+    loadChildren: () => import('./rent-modal/rent-modal.module').then( m => m.RentModalPageModule)
+  },
 ];
 
 @NgModule({

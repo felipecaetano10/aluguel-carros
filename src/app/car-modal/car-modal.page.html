@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-weight: bold;">{{carro.modelo}}</ion-title>
+  </ion-toolbar>
+  <ion-fab vertical="top" horizontal="end">
+    <ion-fab-button size="small" (click)="CloseModal()">
+      <ion-icon size="small" name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-header>
+
+<ion-content>
+
+  <ion-img  src="{{carro.foto}}"></ion-img>
+
+  <ion-item>
+    <ion-label>
+      <h3><b>Diaria:</b> {{carro.diaria | currency: 'R$'}}</h3>
+      <h3><b>Placa: </b>{{carro.placa}}</h3>
+      <h3><b>Ano: </b>{{carro.ano}}</h3>
+      <h3><b>Fabricante: </b>{{carro.fabricante}}</h3>
+      <h3><b>Cor: </b>{{carro.cor}}</h3>
+      <h3><b>Tipo: </b>{{carro.tipo}}</h3>
+      <h3><b>Nº Chassi:</b> {{carro.chassi}}</h3>
+      <h3><b>Nº Renavam:</b> {{carro.renavam}}</h3>        
+    </ion-label>
+  </ion-item>
+
+</ion-content>

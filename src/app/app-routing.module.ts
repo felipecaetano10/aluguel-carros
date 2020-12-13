@@ -4,12 +4,28 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'car-list',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'car-list',
+    loadChildren: () => import('./car-list/car-list.module').then( m => m.CarListPageModule)
+  },
+  {
+    path: 'car-registration',
+    loadChildren: () => import('./car-registration/car-registration.module').then( m => m.CarRegistrationPageModule)
+  },
+  {
+    path: 'car-registration/:codigo',
+    loadChildren: () => import('./car-registration/car-registration.module').then( m => m.CarRegistrationPageModule)
+  },
+  {
+    path: 'car-modal',
+    loadChildren: () => import('./car-modal/car-modal.module').then( m => m.CarModalPageModule)
+  },
+  {
+    path: 'rent-list',
+    loadChildren: () => import('./rent-list/rent-list.module').then( m => m.RentListPageModule)
   }
 ];
 

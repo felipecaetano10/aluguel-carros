@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Carros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      Carros disponíveis
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let car of carList">
+      <ion-item>
+        <IonButton (click)="OpenModal(car)" fill="outline" slot="end"><ion-icon slot="icon-only" name="eye-outline"></ion-icon></IonButton>
+        <ion-avatar slot="start">
+          <img src="{{car.foto}}"/>
+        </ion-avatar>
+        <ion-label>
+          <h2 style="font-weight: bold;">{{car.modelo}}</h2>
+          <h3>Ano: {{car.ano}}</h3>
+          <h4>Placa: {{car.placa}}</h4>
+          <h5>Diaria: {{car.diaria | currency: 'R$'}}</h5>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(car)" color="danger">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="edit(car)" color="warning">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>        
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/car-registration']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

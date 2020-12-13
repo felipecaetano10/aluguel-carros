@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cadastro de Carro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Placa</ion-label>
+    <ion-input
+      placeholder="AAA-0000"
+      [(ngModel)]="car.placa">
+    </ion-input>
+</ion-item>
+  <ion-item>
+    <ion-label>Cor</ion-label>
+    <ion-input [(ngModel)]="car.cor"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fabricante</ion-label>
+    <ion-input [(ngModel)]="car.fabricante"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Modelo</ion-label>
+    <ion-input [(ngModel)]="car.modelo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ano</ion-label>
+    <ion-input [(ngModel)]="car.ano"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)]="car.tipo" multiple="false" placeholder="Selecione o tipo">
+      <ion-select-option *ngFor="let type of types" [value]="type.value">{{type.description}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nº Chassi</ion-label>
+    <ion-input [(ngModel)]="car.chassi"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nº Renavam</ion-label>
+    <ion-input [(ngModel)]="car.renavam"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Preço estimado diária</ion-label>
+    <ion-input [(ngModel)]="car.diaria" type="number" inputmode="decimal"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>URL da foto</ion-label>
+    <ion-input [(ngModel)]="car.foto"></ion-input>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="register()">
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/car-list']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
